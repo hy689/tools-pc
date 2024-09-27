@@ -1,0 +1,14 @@
+.map-dialog{
+    height: 900px;
+}
+.map-dialog-search-result{
+    height: 350px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.map-dialog-search-item{
+    padding: 5px ;
+    border-bottom: 2px solid #eee;
+    cursor: pointer;
+}
