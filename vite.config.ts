@@ -7,7 +7,7 @@ import pxtovw from 'postcss-px-to-viewport'
 // (如果存在)，或者添加一个包含 `declare module 'postcss-px-to-viewport';` 的新声明(.d.ts)文件ts(7016)
 //配置参数
 const usePxtovw = pxtovw({
-  viewportWidth: 375,
+  viewportWidth: 1440,
   viewportUnit: 'vw'
 })
 
