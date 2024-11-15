@@ -23,3 +23,14 @@ src/
 ├── utils/
 │   └── getRamdomNumber.ts
 └── constants.ts
+│── store
+│   ├─ actions // actions，文件夹内以模块区分
+│   │  ├─ count.js
+│   │  └─ person.js
+│   ├─ constants.js // action type唯一标识常量
+│   ├─ index.js // 入口文件
+│   └─ reducers // reducers，文件夹内以模块区分
+│      ├─ conut.js
+│      ├─ index.js // reducers统一暴露文件，合并reducers
+│      └─ persons.js
+
