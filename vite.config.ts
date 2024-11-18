@@ -14,11 +14,11 @@ const usePxtovw = pxtovw({
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  css: {
-    postcss: {
-      plugins: [usePxtovw]
-    }
-  },
+  // css: {
+  //   postcss: {
+  //     plugins: [usePxtovw]
+  //   }
+  // },
   resolve: {
     alias: {
       "@": '/src'

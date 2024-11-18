@@ -1,8 +1,8 @@
 import PreviewFile from '../components/PreviewFile';
+import DocViewer from '../components/DocViewer';
 export default function Test() {
     return (
-        <div>
-            <PreviewFile url={'http://tiantiankaixin.site/ppt2.pptx'} type={'pptx'}></PreviewFile>
-        </div>
+        <DocViewer/>
+            // <PreviewFile url={'http://tiantiankaixin.site/ppt.pptx'} type={'pptx'}></PreviewFile>
     );
 }

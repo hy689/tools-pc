@@ -26,3 +26,8 @@ html {
     color: #007bff;
   }
  
+  :root {
+    --primary-color: #d33b30;
+    --bg-color: #333;
+    --border-radius:10px;
+  }
