@@ -2,6 +2,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 .basic-layout-header{
     height: 64px;
@@ -11,16 +12,26 @@
 .basic-layout-main{
     flex: 1;
     display: flex;
+    overflow: auto;
+    height: 100%;
 }
 .basic-layout-aside{
     width: 256px;
     background: #fff;
     box-shadow: 0 2px 5px 0 rgba(83, 97, 255, .05);
+    height: 100%;
+    overflow: auto;
+
 }
 .basic-layout-article{
-    margin: 16px 0 0 16px;
     flex: 1;
-    background: #fff;
     border-radius: 8px 0 0 0;
+    overflow: auto;
+    background-color: #f9f9ff;
+    padding: 16px;
+}
+
+.basic-layout-content{
+    background-color: #fff;
     height: 100%;
 }

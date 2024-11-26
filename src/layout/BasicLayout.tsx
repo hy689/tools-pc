@@ -14,10 +14,11 @@ const BasicLayout = () => {
         </aside>
         {/* 主要内容 */}
         <article className="basic-layout-article">
-          <Outlet></Outlet>
+          <div className="basic-layout-content">
+            <Outlet></Outlet>
+          </div>
         </article>
       </main>
-      <footer className="basic-layout-footer"></footer>
     </div>
   )
 }

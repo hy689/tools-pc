@@ -15,26 +15,26 @@ export type Route = RouteObject & {
 export const routes = [
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
-        name:'首页',
+        name: '首页',
         path: "/home",
         element: <Home />,
       },
       {
-        name:'测试',
-        path:'/dome',
+        name: '测试',
+        path: '/dome',
         children: [
           {
-            name:'预览pptx',
+            name: '预览pptx',
             path: '/dome/pptx',
             element: <PreviewPPTX />,
           },
           {
-            name:'预览office',
+            name: '预览office',
             path: '/dome/office',
-            element: <PreviewOffice/>,
+            element: <PreviewOffice />,
           },
         ]
       }
@@ -46,4 +46,4 @@ export const routes = [
   }
 ] as Route[]
 
-export default createBrowserRouter(routes );
+export default createBrowserRouter(routes);
