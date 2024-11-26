@@ -1,8 +1,9 @@
 import FileViewer from 'react-file-viewer';
 
 const FileView: React.FC<{
-    file: string
-}> = ( file) => {
+    file: string,
+    type: string
+}> = ( file,type) => {
 
 
     const handleError = (error:any) => {
@@ -37,12 +38,12 @@ const FileView: React.FC<{
               onError={handleError}
 
             /> */}
-            <FileViewer
-              fileType='pptx'
-              filePath='http://tiantiankaixin.site/ppt3.pptx'
+            {/* <FileViewer
+              fileType='xlsx'
+              filePath='/xls200.xlsx'
               onError={handleError}
 
-            />
+            /> */}
           </div>
         </div>
       </div>

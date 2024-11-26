@@ -1,51 +1,33 @@
-import { DocumentEditor } from "@onlyoffice/document-editor-react";
 
-var onDocumentReady = function (event: any) {
-    console.log("Document is loaded", event);
-};
+import {init} from 'pptx-preview'
+import { useEffect } from 'react'
 
-var onLoadComponentError = function (errorCode: any, errorDescription: any) {
-    switch (errorCode) {
-        case -1: // Unknown error loading component
-            console.log(errorDescription);
-            break;
 
-        case -2: // Error load DocsAPI from http://documentserver/
-            console.log(errorDescription);
-            break;
-
-        case -3: // DocsAPI is not defined
-            console.log(errorDescription);
-            break;
-    }
-};
 
 const PreviewFile: React.FC<{
     url: string,
     type: 'docx' | 'pptx' | 'xlsx' | 'pdf'
-}> = ({ url, type }) => {
+}> = ({ }) => {
+    //调用库的init方法生成一个预览器
+    useEffect(() => {
+        let pptxPrviewer = init(document.getElementById('pptx-wrapper'), {
+            width: 960,
+            height: 540
+        })
+        
+        //获取文件或者读取文件，获取文件的 ArrayBuffer格式数据，传给组件进行预览
+        fetch('/ppt200.pptx').then(response=>{
+            return response.arrayBuffer()
+        }).then(res =>{
+            //调用预览器的preview方法
+            pptxPrviewer.preview(res)
+        })
+    })
     return (
         <div>
-            <pre>
-                <DocumentEditor
-                    id="docxEditor"
-                    documentServerUrl="http://120.46.196.120/"
-                    config={{
-                        "document": {
-                            "fileType": type,
-                            "key": "",
-                            "title": "",
-                            "url": url
-                        },
-                        "type": "mobile",
-                        "editorConfig": {
-                            mode: 'view'
-                        }
-                    }}
-                    events_onDocumentReady={onDocumentReady}
-                    onLoadComponentError={onLoadComponentError}
-                />
-            </pre>
+           <div id='pptx-wrapper'>
+
+           </div>
         </div>
     )
 }

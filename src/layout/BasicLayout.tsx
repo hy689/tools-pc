@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import Menu from "./Menu"
 import "./index.css"
 
 const BasicLayout = () => {
@@ -8,7 +9,9 @@ const BasicLayout = () => {
       <header className="basic-layout-header"></header>
       <main className="basic-layout-main">
         {/* 侧边栏 */}
-        <aside className="basic-layout-aside"></aside>
+        <aside className="basic-layout-aside">
+          <Menu></Menu>
+        </aside>
         {/* 主要内容 */}
         <article className="basic-layout-article">
           <Outlet></Outlet>
