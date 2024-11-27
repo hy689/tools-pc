@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { Suspense } from 'react'
 import Menu from "./Menu"
 import "./index.css"
 
@@ -15,7 +16,9 @@ const BasicLayout = () => {
         {/* 主要内容 */}
         <article className="basic-layout-article">
           <div className="basic-layout-content">
-            <Outlet></Outlet>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Outlet></Outlet>
+            </Suspense>
           </div>
         </article>
       </main>

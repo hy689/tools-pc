@@ -1,10 +1,13 @@
 
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import App from "../App";
-import Home from "../pages/Home";
-import PreviewPPTX from "../pages/dome/pptx";
-import PreviewOffice from "../pages/dome/office";
-import Permission from '../components/Permission'
+
+import { lazy } from "react";
+
+const App = lazy(() => import('../App'));
+const Home = lazy(() => import('../pages/Home'));
+const PreviewPPTX = lazy(() => import('../pages/dome/pptx'));
+const PreviewOffice = lazy(() => import('../pages/dome/office'));
+
 
 export type Route = RouteObject & {
   permissionCode: string;
