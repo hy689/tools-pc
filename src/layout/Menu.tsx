@@ -9,10 +9,17 @@ const Menu = () => {
     navigate(e.key)
   }
 
+  const permissions = ['deleteUser', 'addUser']
+
   const renderRoutes = (routes: Route[]): any => {
     if (!routes) return [];
 
     return routes.map((route) => {
+
+      if (route.permissionCode && !hasPermission(route.permissionCode, permissions)) {
+        return null;
+      }
+
       if (route.children) {
         return {
           key: route.path,
@@ -24,7 +31,11 @@ const Menu = () => {
         key: route.path,
         label: route.name,
       };
-    })
+    }).filter((route) => route !== null)
+  }
+
+  const hasPermission = (permissionCode: string, permissions: string[]): boolean => {
+    return permissions.includes(permissionCode);
   }
 
   return (
